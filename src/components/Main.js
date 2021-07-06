@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 
+import Card from './Card'
+import styles from './Main.module.css'
+
 const Main = () => {
   const [items, setItems] = useState([])
 
@@ -23,16 +26,11 @@ const Main = () => {
   //   }, [])
 
   return (
-    <div>
+    <section className={styles.main}>
       {items.map((i) => {
-        return (
-          <div style={{ display: 'flex' }}>
-            <p>{i.name}</p>
-            <img src={i.image} alt={i.name}></img>
-          </div>
-        )
+        return <Card key={i.id} {...i} />
       })}
-    </div>
+    </section>
   )
 }
 
