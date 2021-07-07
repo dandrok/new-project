@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: violet;
+  padding: 1rem;
+}
+.header__left {
+}
+.header__right {
+}
+.header__right > ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
