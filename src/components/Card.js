@@ -19,7 +19,7 @@ const Card = ({ name, image, status, species, location }) => {
         </div>
         <div className={styles.card__right}>
           <div className={styles.card__bg}>
-            <div>{name}</div>
+            <h1 className={styles.card__name}>{name}</h1>
             <div className={styles.card__status}>
               {status === 'Alive' ? (
                 <div className={styles.card__status}>
@@ -36,7 +36,9 @@ const Card = ({ name, image, status, species, location }) => {
               )}
               - <span>{species}</span>
             </div>
-            <div>last location: {location.name}</div>
+            <p className={styles.card__paragraph}>
+              Last location: {location.name}
+            </p>
           </div>
         </div>
       </article>

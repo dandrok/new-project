@@ -1,7 +1,13 @@
-/* .card__main {
-  border-radius: 50px;
-  background: graY;
-} */
+.card__main {
+  opacity: 1;
+
+  transition: all 0.2s ease-in-out;
+}
+.card__main:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .card {
   display: flex;
   max-width: 320px;
@@ -35,6 +41,7 @@
 .card__status {
   display: flex;
   gap: 5px;
+  font-size: var(--font-small);
 }
 
 .red {
@@ -58,4 +65,14 @@
   height: 1rem;
   box-shadow: 0 0 5px rgb(124, 124, 124);
   border-radius: 50%;
+}
+
+.card__paragraph {
+  padding-top: 1rem;
+  font-size: var(--font-small);
+}
+
+.card__name {
+  font-size: var(--font-medium);
+  padding-bottom: 0.5rem;
 }
