@@ -12,53 +12,57 @@ const Main = () => {
   const url = `https://rickandmortyapi.com/api/character/?page=${currentPage}`
 
   useEffect(() => {
-    async function fetchEmployees() {
+    async function fetchCharacter() {
       const response = await fetch(url)
       const fetchedEmployees = await response.json()
 
       setItems(fetchedEmployees.results)
-      console.log('fetchedEmployess', fetchedEmployees.results)
+      console.log('fetched_Character', fetchedEmployees.results)
     }
-    fetchEmployees()
+    fetchCharacter()
   }, [])
 
-  async function fetchEmployees() {
+  async function fetchCharacter() {
     const response = await fetch(url)
     const fetchedEmployees = await response.json()
 
     setItems(fetchedEmployees.results)
-    console.log('fetchedEmployess', fetchedEmployees.results)
+    console.log('fetched_Character', fetchedEmployees.results)
   }
 
   const pages = 34
 
-  // const refreshPage = () => {
-  //   window.location.reload()
-  // }
-  // const updatePage = () => {
-  //   setCurrentPage(currentPage + 1)
-  // }
-
   const handlerNext = () => {
-    setCurrentPage(currentPage + 1, fetchEmployees())
+    if (currentPage >= 0 && currentPage < 34) {
+      setCurrentPage(currentPage + 1, fetchCharacter())
+    }
     console.log(currentPage)
   }
   const handlerBack = () => {
-    setCurrentPage(currentPage - 1, fetchEmployees())
+    if (currentPage >= 1) {
+      setCurrentPage(currentPage - 1, fetchCharacter())
+    }
     console.log(currentPage)
   }
 
+  console.log(currentPage)
   return (
     <div>
       <PaginationComponent />
-      <input
-        type='text'
-        onChange={(event) => setCurrentPage(event.target.value)}
-        placeholder='2'
-      />
-      <button onClick={fetchEmployees}>Go</button>
-      <button onClick={handlerBack}>Back</button>
-      <button onClick={handlerNext}>Next</button>
+      {/* <div>
+        <input
+          type='number'
+          onChange={(event) => setCurrentPage(event.target.value)}
+          maxLength={2}
+          min={1}
+          max={34}
+        />
+        <button onClick={fetchCharacter}>Go</button>
+      </div> */}
+      <div className={styles.main__btns}>
+        <button onClick={handlerBack}>Back</button>
+        <button onClick={handlerNext}>Next</button>
+      </div>
 
       <section className={styles.main}>
         {items.map((i) => {
