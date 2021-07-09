@@ -36,33 +36,20 @@ const Main = () => {
     if (currentPage >= 0 && currentPage < 34) {
       setCurrentPage(currentPage + 1, fetchCharacter())
     }
-    console.log(currentPage)
   }
   const handlerBack = () => {
     if (currentPage >= 1) {
       setCurrentPage(currentPage - 1, fetchCharacter())
     }
-    console.log(currentPage)
   }
 
   console.log(currentPage)
   return (
     <div>
-      <PaginationComponent />
-      {/* <div>
-        <input
-          type='number'
-          onChange={(event) => setCurrentPage(event.target.value)}
-          maxLength={2}
-          min={1}
-          max={34}
-        />
-        <button onClick={fetchCharacter}>Go</button>
-      </div> */}
-      <div className={styles.main__btns}>
-        <button onClick={handlerBack}>Back</button>
-        <button onClick={handlerNext}>Next</button>
-      </div>
+      <PaginationComponent
+        handlerNext={handlerNext}
+        handlerBack={handlerBack}
+      />
 
       <section className={styles.main}>
         {items.map((i) => {

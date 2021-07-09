@@ -1,9 +1,10 @@
-import React from 'react'
+import styles from './PaginationCOmponent.module.css'
 
-const PaginationComponent = () => {
+const PaginationComponent = ({ handlerBack, handlerNext }) => {
   return (
-    <div>
-      <p></p>
+    <div className={styles.main__btns}>
+      <button onClick={handlerBack}>Back</button>
+      <button onClick={handlerNext}>Next</button>
     </div>
   )
 }

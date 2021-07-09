@@ -1,0 +1,20 @@
+.main__btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: pink;
+  border: solid 1px white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  border: dashed 1px black;
+}
