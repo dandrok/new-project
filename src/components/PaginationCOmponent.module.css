@@ -1,4 +1,4 @@
-.main__btns {
+.btns {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -17,4 +17,8 @@ button:hover {
 
 button:active {
   border: dashed 1px black;
+}
+
+p {
+  margin: 0 5px;
 }

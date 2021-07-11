@@ -14,42 +14,21 @@ const Main = () => {
   useEffect(() => {
     async function fetchCharacter() {
       const response = await fetch(url)
-      const fetchedEmployees = await response.json()
+      const fetchedCharacter = await response.json()
 
-      setItems(fetchedEmployees.results)
-      console.log('fetched_Character', fetchedEmployees.results)
+      setItems(fetchedCharacter.results)
+      console.log('fetched_Character', fetchedCharacter.results)
     }
     fetchCharacter()
   }, [currentPage])
 
-  async function fetchCharacter() {
-    const response = await fetch(url)
-    const fetchedEmployees = await response.json()
-
-    setItems(fetchedEmployees.results)
-    console.log('fetched_Character', fetchedEmployees.results)
-  }
-
-  const pages = 34
-
-  const handlerNext = () => {
-    if (currentPage >= 0 && currentPage < 34) {
-      setCurrentPage(currentPage + 1, fetchCharacter())
-    }
-  }
-  const handlerBack = () => {
-    if (currentPage >= 2) {
-      setCurrentPage(currentPage - 1, fetchCharacter())
-    }
-  }
-
-  console.log(currentPage)
   return (
     <div>
       <PaginationComponent
-        handlerNext={handlerNext}
-        handlerBack={handlerBack}
         currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        setItems={setItems}
+        url={url}
       />
 
       <section className={styles.main}>
