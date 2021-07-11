@@ -5,15 +5,8 @@ const PaginationComponent = ({
   setItems,
   url,
   setCurrentPage,
+  fetchCharacter,
 }) => {
-  async function fetchCharacter() {
-    const response = await fetch(url)
-    const fetchedCharacter = await response.json()
-
-    setItems(fetchedCharacter.results)
-    console.log('fetched_Character', fetchedCharacter.results)
-  }
-
   const handlerNext = () => {
     if (currentPage >= 0 && currentPage < 34) {
       setCurrentPage(currentPage + 1, fetchCharacter())
