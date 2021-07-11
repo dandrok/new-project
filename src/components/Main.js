@@ -20,7 +20,7 @@ const Main = () => {
       console.log('fetched_Character', fetchedEmployees.results)
     }
     fetchCharacter()
-  }, [])
+  }, [currentPage])
 
   async function fetchCharacter() {
     const response = await fetch(url)
@@ -38,7 +38,7 @@ const Main = () => {
     }
   }
   const handlerBack = () => {
-    if (currentPage >= 1) {
+    if (currentPage >= 2) {
       setCurrentPage(currentPage - 1, fetchCharacter())
     }
   }
@@ -49,6 +49,7 @@ const Main = () => {
       <PaginationComponent
         handlerNext={handlerNext}
         handlerBack={handlerBack}
+        currentPage={currentPage}
       />
 
       <section className={styles.main}>
