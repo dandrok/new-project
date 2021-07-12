@@ -17,6 +17,7 @@
 
 body {
   overflow-y: scroll;
+  background: rgb(202, 202, 202);
 }
 /* width */
 ::-webkit-scrollbar {

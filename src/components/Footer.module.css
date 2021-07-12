@@ -1,8 +1,9 @@
 .footer {
   border-top: solid gray 1px;
   display: flex;
-  gap: 1rem;
+
   justify-content: center;
   margin-top: 2rem;
   padding: 1rem;
+  font-weight: 700;
 }

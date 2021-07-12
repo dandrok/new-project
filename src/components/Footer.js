@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.footer}>
-        <p>by</p> <a href='https://github.com/dandrok'>dandrok</a>
+        <p>made by</p>
+        <a href='https://github.com/dandrok'>dandrok</a>
       </div>
     </footer>
   )
