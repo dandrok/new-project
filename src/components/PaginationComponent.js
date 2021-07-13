@@ -2,8 +2,6 @@ import styles from './PaginationCOmponent.module.css'
 
 const PaginationComponent = ({
   currentPage,
-  setItems,
-  url,
   setCurrentPage,
   fetchCharacter,
 }) => {
